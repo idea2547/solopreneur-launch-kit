@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solopreneur Launch Kit — Ship Your SaaS in 7 Days</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; background: #0a0a0a; color: #fafafa; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Nav */
+        nav { padding: 20px 0; border-bottom: 1px solid #1a1a1a; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 20px; font-weight: bold; color: #22c55e; }
+        .nav-links a { color: #888; text-decoration: none; margin-left: 24px; transition: color 0.2s; }
+        .nav-links a:hover { color: #fff; }
+        
+        /* Hero */
+        .hero { text-align: center; padding: 80px 0 60px; }
+        .hero h1 { font-size: 52px; font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 span { color: #22c55e; }
+        .hero p { font-size: 20px; color: #888; max-width: 600px; margin: 0 auto 40px; }
+        .btn { display: inline-block; padding: 16px 40px; border-radius: 12px; font-size: 18px; font-weight: 700; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
+        .btn-primary { background: #22c55e; color: #000; }
+        .btn-primary:hover { background: #4ade80; transform: translateY(-2px); }
+        .btn-secondary { border: 1px solid #333; color: #fff; background: transparent; }
+        .btn-secondary:hover { border-color: #555; }
+        .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        
+        /* Badge */
+        .badge { display: inline-block; background: #22c55e15; color: #22c55e; padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 600; margin-bottom: 20px; border: 1px solid #22c55e30; }
+        
+        /* Sections */
+        section { padding: 60px 0; }
+        section h2 { font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 12px; }
+        section .subtitle { color: #888; text-align: center; font-size: 18px; margin-bottom: 48px; }
+        
+        /* Features Grid */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .feature { background: #111; border: 1px solid #1a1a1a; border-radius: 16px; padding: 28px; transition: border-color 0.2s; }
+        .feature:hover { border-color: #333; }
+        .feature .icon { font-size: 32px; margin-bottom: 12px; }
+        .feature h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+        .feature p { color: #888; font-size: 14px; line-height: 1.5; }
+        
+        /* Pricing */
+        .pricing-card { background: #111; border: 2px solid #22c55e; border-radius: 20px; padding: 48px; max-width: 500px; margin: 0 auto; text-align: center; position: relative; }
+        .pricing-card .popular { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #22c55e; color: #000; padding: 6px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; }
+        .pricing-card .price { font-size: 64px; font-weight: 800; margin: 16px 0 8px; }
+        .pricing-card .price span { font-size: 20px; color: #888; font-weight: 400; }
+        .pricing-card .desc { color: #888; margin-bottom: 32px; }
+        .pricing-card ul { list-style: none; text-align: left; margin-bottom: 32px; }
+        .pricing-card li { padding: 8px 0; color: #ccc; font-size: 15px; }
+        .pricing-card li::before { content: "✓"; color: #22c55e; margin-right: 12px; font-weight: bold; }
+        
+        /* Stack */
+        .stack { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .stack-item { background: #111; border: 1px solid #1a1a1a; padding: 10px 20px; border-radius: 24px; font-size: 14px; color: #aaa; }
+        
+        /* Testimonial */
+        .testimonial { background: #111; border: 1px solid #1a1a1a; border-radius: 16px; padding: 32px; max-width: 600px; margin: 0 auto; text-align: center; }
+        .testimonial .quote { font-size: 18px; color: #ccc; font-style: italic; margin-bottom: 16px; }
+        .testimonial .author { color: #888; font-size: 14px; }
+        
+        /* CTA */
+        .cta { text-align: center; padding: 80px 0; }
+        .cta h2 { font-size: 36px; margin-bottom: 12px; }
+        .cta p { color: #888; font-size: 18px; margin-bottom: 32px; }
+        
+        /* Footer */
+        footer { border-top: 1px solid #1a1a1a; padding: 32px 0; text-align: center; color: #555; font-size: 14px; }
+        
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 16px; }
+            .pricing-card { padding: 32px 24px; }
+            .pricing-card .price { font-size: 48px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Nav -->
+    <nav>
+        <div class="container">
+            <div class="logo">⚡ Solopreneur Launch Kit</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#buy" class="btn btn-primary" style="padding:8px 20px;font-size:14px;margin-left:24px;">Buy Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge">🚀 Just launched — v1.0</div>
+            <h1>Ship Your SaaS<br>in <span>7 Days</span></h1>
+            <p>Production-ready codebase + step-by-step playbook. Stop spending weeks on setup. Start taking payments on Day 4.</p>
+            <div class="hero-buttons">
+                <a href="#buy" class="btn btn-primary">Get the Kit — $9</a>
+                <a href="#features" class="btn btn-secondary">See What's Inside</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Inside -->
+    <section id="features">
+        <div class="container">
+            <h2>What's Inside</h2>
+            <p class="subtitle">Everything you need to go from idea to launched SaaS</p>
+            <div class="features">
+                <div class="feature">
+                    <div class="icon">💻</div>
+                    <h3>Next.js SaaS Starter</h3>
+                    <p>Complete codebase with auth, dashboard, pricing page, Stripe checkout, and webhook handler. Production-ready TypeScript.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">📋</div>
+                    <h3>7-Day Launch Checklist</h3>
+                    <p>Step-by-step guide from validation to launch. Each day has clear tasks with time estimates. No guesswork.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">🎯</div>
+                    <h3>Idea Validation Canvas</h3>
+                    <p>30-minute framework to validate your idea before building. Includes scoring system and pre-sell strategy.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">🤖</div>
+                    <h3>AI Prompts Library</h3>
+                    <p>Copy-paste prompts for Cursor, Claude, and Bolt.new. Add features like file upload, CRUD, analytics in minutes.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">🚀</div>
+                    <h3>5-Min Deploy Guide</h3>
+                    <p>Deploy to Vercel + PocketBase in 5 minutes. Includes PocketBase hosting options and Stripe webhook setup.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">📚</div>
+                    <h3>PDF Guides</h3>
+                    <p>All guides as beautifully formatted PDFs. Print them, annotate them, follow them offline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section style="background:#0f0f0f;">
+        <div class="container">
+            <h2>Built With</h2>
+            <p class="subtitle">The same stack used by thousands of indie hackers</p>
+            <div class="stack">
+                <div class="stack-item">Next.js 14</div>
+                <div class="stack-item">TypeScript</div>
+                <div class="stack-item">Tailwind CSS</div>
+                <div class="stack-item">PocketBase</div>
+                <div class="stack-item">Stripe</div>
+                <div class="stack-item">Resend</div>
+                <div class="stack-item">Vercel</div>
+                <div class="stack-item">Cursor</div>
+                <div class="stack-item">Claude AI</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing">
+        <div class="container">
+            <h2>One Price. Everything.</h2>
+            <p class="subtitle">No subscriptions. No upsells. Pay once, use forever.</p>
+            <div class="pricing-card" id="buy">
+                <div class="popular">BEST VALUE</div>
+                <h3>Solopreneur Launch Kit</h3>
+                <div class="price">$9<span> one-time</span></div>
+                <p class="desc">Everything you need to ship your first SaaS</p>
+                <ul>
+                    <li>Complete Next.js SaaS codebase</li>
+                    <li>Authentication + Dashboard + Pricing page</li>
+                    <li>Stripe checkout + webhook integration</li>
+                    <li>PocketBase backend setup</li>
+                    <li>7-Day Launch Checklist (PDF + Markdown)</li>
+                    <li>Idea Validation Canvas (PDF + Markdown)</li>
+                    <li>AI Prompts Library (PDF + Markdown)</li>
+                    <li>Deploy Guide (5-minute production setup)</li>
+                    <li>MIT License — unlimited commercial use</li>
+                    <li>Free updates forever</li>
+                </ul>
+                <a href="https://buy.stripe.com/test_REPLACE_WITH_YOUR_LINK" class="btn btn-primary" style="width:100%;text-align:center;" id="buy-btn">
+                    Buy Now — $9
+                </a>
+                <p style="color:#666;font-size:12px;margin-top:16px;">Instant download. 30-day money-back guarantee.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="background:#0f0f0f;">
+        <div class="container" style="max-width:640px;">
+            <h2>FAQ</h2>
+            <div style="margin-top:32px;">
+                <div style="border-bottom:1px solid #1a1a1a;padding-bottom:20px;margin-bottom:20px;">
+                    <h3 style="font-size:16px;margin-bottom:8px;">Do I need coding experience?</h3>
+                    <p style="color:#888;font-size:14px;">Basic HTML/CSS helps, but the AI prompts handle most coding. If you can copy-paste and follow instructions, you can use this kit.</p>
+                </div>
+                <div style="border-bottom:1px solid #1a1a1a;padding-bottom:20px;margin-bottom:20px;">
+                    <h3 style="font-size:16px;margin-bottom:8px;">What does it cost to run?</h3>
+                    <p style="color:#888;font-size:14px;">PocketBase: $0-6/mo (self-hosted). Vercel: $0 (free tier). Stripe: 2.9% per transaction. Total: under $10/mo to start.</p>
+                </div>
+                <div style="border-bottom:1px solid #1a1a1a;padding-bottom:20px;margin-bottom:20px;">
+                    <h3 style="font-size:16px;margin-bottom:8px;">Can I use this for multiple projects?</h3>
+                    <p style="color:#888;font-size:14px;">Yes! MIT license means unlimited personal and commercial projects. Clone it, modify it, sell products built with it.</p>
+                </div>
+                <div style="border-bottom:1px solid #1a1a1a;padding-bottom:20px;margin-bottom:20px;">
+                    <h3 style="font-size:16px;margin-bottom:8px;">How do I get the files?</h3>
+                    <p style="color:#888;font-size:14px;">Instant download after payment. You get a ZIP file with everything. Start building in 5 minutes.</p>
+                </div>
+                <div style="padding-bottom:20px;">
+                    <h3 style="font-size:16px;margin-bottom:8px;">What if I need help?</h3>
+                    <p style="color:#888;font-size:14px;">Email support included. Plus the AI prompts let you ask Cursor/Claude for help with any feature.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Ship?</h2>
+            <p>Stop planning. Start building. Your first SaaS is 7 days away.</p>
+            <a href="https://buy.stripe.com/test_REPLACE_WITH_YOUR_LINK" class="btn btn-primary">Get the Kit — $9</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Solopreneur Launch Kit — Built for builders who ship.</p>
+            <p style="margin-top:8px;">MIT License · Instant Download · 30-Day Money-Back</p>
+        </div>
+    </footer>
+</body>
+</html>
