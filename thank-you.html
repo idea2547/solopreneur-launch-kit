@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You — Solopreneur Launch Kit</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; background: #0a0a0a; color: #fafafa; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .container { max-width: 500px; padding: 24px; text-align: center; }
+        h1 { font-size: 36px; margin-bottom: 16px; }
+        .check { font-size: 64px; margin-bottom: 24px; }
+        p { color: #888; font-size: 16px; line-height: 1.6; margin-bottom: 16px; }
+        .btn { display: inline-block; background: #22c55e; color: #000; padding: 16px 40px; border-radius: 12px; font-size: 18px; font-weight: 700; text-decoration: none; margin-top: 24px; }
+        .btn:hover { background: #4ade80; }
+        .note { color: #555; font-size: 13px; margin-top: 32px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="check">🎉</div>
+        <h1>You're In!</h1>
+        <p>Your Solopreneur Launch Kit is ready to download.</p>
+        <a href="DOWNLOAD_LINK_HERE" class="btn" id="download-btn">Download ZIP</a>
+        <p style="margin-top:32px;">Check your email for the download link too.</p>
+        <p class="note">Questions? Reply to your receipt email — I read every one.</p>
+    </div>
+    <script>
+        // If coming from Stripe redirect with session_id, verify payment
+        const params = new URLSearchParams(window.location.search);
+        const sessionId = params.get('session_id');
+        if (sessionId) {
+            console.log('Payment verified:', sessionId);
+        }
+    </script>
+</body>
+</html>
